@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "https://fitness-kl4y.onrender.com",
+    origin: process.env.CLIENT_URL || "https://fitness-t0hu.onrender.com",
     credentials: true,
   })
 );

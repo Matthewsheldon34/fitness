@@ -7,7 +7,7 @@ const router = express.Router();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 router.post("/", express.raw({ type: "application/json" }), async (req, res) => {
-  let event;
+let event;
 
   try {
     event = stripe.webhooks.constructEvent(
@@ -41,6 +41,7 @@ router.post("/", express.raw({ type: "application/json" }), async (req, res) => 
         WHERE stripe_session_id = ${session.id}
           OR id::text = ${orderId ?? ""}
       `;
+
     } else if (event.type === "checkout.session.async_payment_failed") {
       await sql`
         UPDATE orders

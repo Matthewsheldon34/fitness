@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://fitness-5glw.onrender.com",
+        target: "https://fitness-t0hu.onrender.com",
         changeOrigin: true,
       },
     },
